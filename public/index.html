@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="stylesheet" href="todo.css"> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
+  </head>
+  <body ng-controller="TodoListController">
+    <center>{{title}}</center>
+    <center>
+      <form ng-submit="search(keyword)">
+        <input type="text" placeholder="search ..." ng-model="keyword">
+      </form>
+    </center>
+      <div class="ui items" ng-repeat="show in data.items">
+      <div class="item">
+        <div class="image">
+          <img src="{{show.snippet.thumbnails.default.url}}">
+        </div>
+        <div class="content">
+          <a class="header">Header</a>
+          <div class="meta">
+            <span>Description</span>
+          </div>
+          <div class="description">
+            <p></p>
+          </div>
+          <div class="extra">
+            Additional Details
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
