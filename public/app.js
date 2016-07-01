@@ -18,7 +18,7 @@ angular.module('todoApp', ['ngYoutubeEmbed', 'youtube-embed'])
         var data = {
           id: id,
           title: title,
-          piuc: pic
+          pic: pic
         }
         $scope.dataVideo.push(data)
         $scope.video.push(id)
@@ -27,6 +27,8 @@ angular.module('todoApp', ['ngYoutubeEmbed', 'youtube-embed'])
       $scope.$on('youtube.player.ended', function ($event, player) {
         $scope.dataVideo.shift()
         $scope.video.shift()
+        console.log($scope.dataVideo)
+        console.log($scope.video)
         player.playVideo()
       })
     }
